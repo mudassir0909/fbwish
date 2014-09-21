@@ -45,7 +45,7 @@ wisher.wish_em_all! # Sit back & relax ;-)
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fbwish/fork )
+1. Fork it ( https://github.com/mudassir0909/fbwish/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
