@@ -18,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Getting your facebook access token
+
+1. Goto [Graph API Explorer](https://developers.facebook.com/tools/explorer)
+2. Click `Get Access Token`
+3. Make sure only `publish_actions` & `read_stream` is checked under **Extended Permissions** tab. Also nothing should be checked under **User Data Permissions** tab.
+4. Click `Get Access Token` button.
+5. Allow access when a popup is displayed.
+6. Copy the generated access token.
+
+#### Final step
+```ruby
+require('fbwish')
+wisher = Fbwish::Wisher.new({
+    # A valid ruby regular expression based on the wishes you've received.
+    matcher: /(happy)|(birthday)|(b[\']?day)|(B[\']?DAY)|(hbd)/i,
+    # Set of replies that you'd like to wish
+    replies: ["Thank you :D", "Thanks :D", "Thx a lot :-)", "Hey, thx !!! :-)","Thnk U !!!", "Hey Thanks ! :D "],
+    access_token: "PASTE YOUR ACCESS TOKEN HERE",
+    # Number of people who wished you on your birthday, you'll know this
+    # on your timeline when facebook says "foo, bar & 254 others wished you"
+    wish_count: 256
+})
+wisher.wish_em_all! # Sit back & relax ;-)
+```
 
 ## Contributing
 
