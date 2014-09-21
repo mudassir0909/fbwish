@@ -2,6 +2,8 @@
 
 Ruby Gem to automate facebook like &amp; comment on the birthday wishes using Graph API.
 
+If you have alot of friends in your facebook network & when they wish you on your birthday, it's pretty cumbersome to reply to each one of them. So, we try to post a status message saying "Thank you all for the wishes !" instead, but that's not so programmery(Yeah, I just made that up). This gem helps you in automating all those likes & comments using facebook's graph API (using ruby gem koala).
+
 ## Installation
 
 Add this line to your application's Gemfile:
