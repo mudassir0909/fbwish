@@ -1,6 +1,6 @@
 # Fbwish
 
-TODO: Write a gem description
+Ruby Gem to automate facebook like &amp; comment on the birthday wishes using Graph API.
 
 ## Installation
 
@@ -27,3 +27,6 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+=======
+fbwish
+======
