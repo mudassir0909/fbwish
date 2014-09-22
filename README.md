@@ -2,7 +2,7 @@
 
 Ruby Gem to automate facebook like &amp; comment on the birthday wishes using Graph API.
 
-If you have alot of friends in your facebook network & when they wish you on your birthday, it's pretty cumbersome to reply to each one of them. So, we try to post a status message saying "Thank you all for the wishes !" instead, but that's not so programmery(Yeah, I just made that up). This gem helps you in automating all those likes & comments using facebook's graph API (using ruby gem koala).
+If you have alot of friends in your facebook network & when they wish you on your birthday, it's pretty cumbersome to reply to each one of them. This gem helps you in automating your replies by liking & commenting on those wishes using facebook's graph API (powered by ruby gem [koala](https://github.com/arsduo/koala)).
 
 ## Installation
 
@@ -43,6 +43,26 @@ wisher = Fbwish::Wisher.new({
     wish_count: 256
 })
 wisher.wish_em_all! # Sit back & relax ;-)
+```
+
+### Advanced stuff
+Sometimes people wish you in multiple languages & you might want to reply back in the same language. In that case you might want to namespace corresponding `matcher` & `replies` as follows:
+```ruby
+require('fbwish')
+wisher = Fbwish::Wisher.new({
+    matcher: {
+        # regex to match english wishes
+        en:  /(happy)|(birthday)|(b[\']?day)|(B[\']?DAY)|(hbd)/i,
+        # regex to match tamil (or your own language
+        tam: /(iniya)|(inya)|(இனிய)|(பிறந்தநாள்)|(வாழ்த்துக்கள்)/i
+    },
+    replies: {
+        # namespace with the same key i.e. "en"
+        en: ["Thank you :D", "Thanks :D", "Thx a lot :-)"],
+        tam: ["நன்றி !!! :D"]
+    },
+    access_token: "PASTE YOUR ACCESS TOKEN HERE",
+    wish_count: 256
 ```
 
 ## Contributing
