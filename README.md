@@ -53,7 +53,7 @@ wisher = Fbwish::Wisher.new({
     matcher: {
         # regex to match english wishes
         en:  /(happy)|(birthday)|(b[\']?day)|(B[\']?DAY)|(hbd)/i,
-        # regex to match tamil (or your own language
+        # regex to match tamil wishes (or your own language )
         tam: /(iniya)|(inya)|(இனிய)|(பிறந்தநாள்)|(வாழ்த்துக்கள்)/i
     },
     replies: {
