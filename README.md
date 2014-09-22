@@ -63,6 +63,7 @@ wisher = Fbwish::Wisher.new({
     },
     access_token: "PASTE YOUR ACCESS TOKEN HERE",
     wish_count: 256
+})
 ```
 
 ## Contributing
