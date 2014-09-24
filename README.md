@@ -30,6 +30,11 @@ Getting your facebook access token
 6. Copy the generated access token.
 
 #### Final step
+Open ruby's interactive terminal using the following command
+
+    $ irb
+
+Once you are into the terminal run the following commands, with appropriate configuration
 ```ruby
 require('fbwish')
 wisher = Fbwish::Wisher.new({
@@ -40,7 +45,10 @@ wisher = Fbwish::Wisher.new({
     access_token: "PASTE YOUR ACCESS TOKEN HERE",
     # Number of people who wished you on your birthday, you'll know this
     # on your timeline when facebook says "foo, bar & 254 others wished you"
-    wish_count: 256
+    wish_count: 256,
+    # Optional attribute, false by default.
+    # If true, it logs the replies
+    verbose: true
 })
 wisher.wish_em_all! # Sit back & relax ;-)
 ```
@@ -62,8 +70,10 @@ wisher = Fbwish::Wisher.new({
         tam: ["நன்றி !!! :D"]
     },
     access_token: "PASTE YOUR ACCESS TOKEN HERE",
-    wish_count: 256
+    wish_count: 256,
+    verbose: true
 })
+wisher.wish_em_all!
 ```
 
 ## Contributing
