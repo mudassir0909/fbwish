@@ -3,23 +3,28 @@ require "koala"
 
 module Fbwish
   class Wisher
+
+    attr_accessor :graph, :matcher, :replies, :wish_count
+
     def initialize(options={})
-      required_options = [:access_token, :matcher, :replies]
-      unspecified_options = options.keys.reject{ |key| options[key] }
+      required_options = [:access_token, :matcher, :replies, :wish_count]
+      unspecified_options = required_options.reject{ |key| options[key] }
 
       unless unspecified_options.empty?
-        raise ArgumentError("Following options are required: #{unspecified_options.join(', ')}")
+        raise ArgumentError, "Following options are required: #{unspecified_options.join(', ')}"
       end
 
       self.graph = Koala::Facebook::API.new(options[:access_token])
       self.matcher = options[:matcher]
       self.replies = options[:replies]
+      self.wish_count = options[:wish_count]
     end
 
     def wish_em_all!
       wishes = nil
+      iteration_count = (wish_count.to_f / 25).ceil
 
-      1.upto(13) do |idx|
+      1.upto(iteration_count) do |idx|
         wishes = wishes.next_page rescue graph.get_connections('me', 'feed')
 
         wishes.each do |wish|
@@ -42,7 +47,7 @@ module Fbwish
       end
 
       def like_and_comment(wish)
-        if matcher.is_a?(Object)
+        if matcher.is_a?(Hash)
           matcher.each do |locale, regex|
             if regex.match(wish['message'])
               like(wish)
