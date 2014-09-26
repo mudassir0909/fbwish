@@ -75,7 +75,7 @@ module Fbwish
         reply = replies.is_a?(Array) ?
                 replies[rand(replies.length-1)] :
                 replies
-        reply += " #{wisher(wish)}"
+        reply = "#{wisher(wish)}: " + reply
         graph.put_comment(wish['id'], reply)
 
         return reply
