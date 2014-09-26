@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Getting your facebook access token
+#### Getting your facebook access token
 
 1. Goto [Graph API Explorer](https://developers.facebook.com/tools/explorer)
 2. Click `Get Access Token`
