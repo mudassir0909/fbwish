@@ -1,3 +1,5 @@
+Special Thanks to  [Elangkumaran J](https://www.linkedin.com/in/elangkumaranj) for the multilingual feature and suggesting improvements
+
 # Fbwish [![fbwish API Documentation](https://www.omniref.com/ruby/gems/fbwish.png)](https://www.omniref.com/ruby/gems/fbwish)
 
 Ruby Gem to automate facebook like &amp; comment on the birthday wishes using Graph API.
